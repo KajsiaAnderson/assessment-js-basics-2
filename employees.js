@@ -65,7 +65,7 @@ empOne.getSchedule()
 */
 
 //CODE HERE
-let empTwo = {...empOne}
+let empTwo = {...empOne, name:'Nick'}
 
 console.log(empTwo)
 
@@ -105,8 +105,7 @@ class Manager extends Employee {
         console.log(`${this.name} manages ${this.employees}`)
     }
     addEmployee(emp){
-        let employeeArr = [];
-        employeeArr.push(emp) 
+        this.employees.push(emp) 
     }
 }
 
@@ -124,7 +123,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', 'Cece and Schmidt')
+let manager = new Manager('Winston', 'weekday mornings, weekday afternoons', ['Cece', ' Schmidt'])
 
 /*
     Call the `getEmployees` method on the
@@ -140,7 +139,7 @@ manager.getEmployees()
 */
 
 //CODE HERE 
-manager.addEmployee('Coach')
+manager.addEmployee(' Coach')
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 

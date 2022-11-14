@@ -72,7 +72,7 @@ console.log(pizza.tags[1])
 
 //CODE HERE
 let {price} = pizza
-console.log(`The price for this pizza is ${price}`)
+console.log(`The price for this pizza is $${price}`)
 
 /*
     Fourth, and last, destructure the category
@@ -161,9 +161,8 @@ const foodArr = [
 
 //CODE HERE
 
-const filteredFood = foodArr => {
-    let food = foodArr.filter(element => element.tags === 'pineapple')
-    return food
+const filteredFood = arr => {
+    return arr.filter(element => element.tags.includes('pineapple'))
 }
 console.log(filteredFood(foodArr))
 
@@ -209,12 +208,18 @@ console.log(filteredFood(foodArr))
 */
 
 //CODE HERE
-const filterByProperty = (property, number, type) => {
-    let filterArr = property.filter(element => element > 3)
-    number
-
+function filterByProperty (property, number, type) {
+    let filterArr = foodArr.filter((foodObj) => {
+        if(type === 'above'){
+            return foodObj[property] > number
+        }else if (type === 'below'){
+            return foodObj[property] < number
+        }
+    })
+    
     return filterArr
 }
+console.log(filterByProperty('price', 5, 'below'))
 
 /*
     Invoke the `filterByProperty` function passing
